@@ -7,20 +7,25 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import kotlin.random.Random
 
 class GameActivity : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null
     private lateinit var gvGame: GridView
+    private lateinit var professores: ArrayList<Professor>
     private lateinit var btVoltar: Button
     private lateinit var btRecomecar: Button
     private var first: ImageView? = null
     private var second: ImageView? = null
+
     private var numberPoints = 0
     private var maxPoints = 8
     private var hit = false
 
+    private var pos = arrayListOf<Int>()
+    private var currentPos = -1
 
-    private val teachers = intArrayOf(
+    /*private val teachers = intArrayOf(
         R.drawable.alana, R.drawable.alex, R.drawable.candido, R.drawable.crishane,
         R.drawable.damires, R.drawable.denio, R.drawable.edemberg, R.drawable.fausto,
         R.drawable.francisco, R.drawable.fred, R.drawable.giovanni, R.drawable.gustavo,
@@ -28,16 +33,13 @@ class GameActivity : AppCompatActivity() {
         R.drawable.luiz, R.drawable.nilton, R.drawable.paulo, R.drawable.petronio,
         R.drawable.pryscilla, R.drawable.thiago, R.drawable.valeria, R.drawable.valeria,
         R.drawable.zefilho
-    )
-
-
-    private var pos = intArrayOf(0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 2, 3, 4, 5, 6, 7).toList().shuffled()
-    private var currentPos = -1
-    //private lateinit var playerOnGame: Jogador
+    )*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
+
+        professores = intent.getSerializableExtra("PROFESSORES") as ArrayList<Professor>
 
         mediaPlayer = MediaPlayer.create(this, R.raw.tobu_candyland)
         mediaPlayer?.start()
@@ -51,7 +53,21 @@ class GameActivity : AppCompatActivity() {
         gvGame.adapter = imageAdapter
         gvGame.setOnItemClickListener(Game())
 
-        //playerOnGame = intent.getSerializableExtra("Jogador") as Jogador
+        var n: Int
+        val arrayAux = arrayListOf<Int>()
+        while (true) {
+            n = Random.nextInt(0, 22) // quantidade de profesores
+
+            if (!arrayAux.contains(n))
+                arrayAux.add(n)
+
+            if (arrayAux.size == 8)
+                break
+        }
+
+        pos.addAll(arrayAux)
+        pos.addAll(arrayAux)
+        pos = pos.toList().shuffled() as ArrayList<Int>
 
         this.btVoltar = findViewById(R.id.btVoltar)
         this.btRecomecar = findViewById(R.id.btRecomecar)
@@ -85,19 +101,18 @@ class GameActivity : AppCompatActivity() {
 
                 currentPos = position
                 first = view as ImageView
-                view.setImageResource(teachers[pos[position]])
+                view.setImageResource(professores[pos[position]].foto)
 
             } else {
-                if (currentPos == 0) {
-                    Toast.makeText(this@GameActivity, "Another try!", Toast.LENGTH_SHORT).show()
+                if (currentPos == position) {
+                    Toast.makeText(this@GameActivity, "Tente novamente!", Toast.LENGTH_SHORT).show()
                 } else if (pos[currentPos] != pos[position]) {
-                    (view as ImageView).setImageResource(teachers[pos[position]])
+                    (view as ImageView).setImageResource(professores[pos[position]].foto)
                     currentPos = -1
                     hit = false
                     second = view
-                    Toast.makeText(this@GameActivity, "Missed!", Toast.LENGTH_SHORT).show()
                 } else {
-                    (view as ImageView).setImageResource(teachers[pos[position]])
+                    (view as ImageView).setImageResource(professores[pos[position]].foto)
 
                     numberPoints++
                     currentPos = -1
@@ -105,17 +120,16 @@ class GameActivity : AppCompatActivity() {
                     second = view
                     first?.setOnClickListener(null)
                     second?.setOnClickListener(null)
-                    Toast.makeText(this@GameActivity, "Bull's eye!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@GameActivity, "Você acertou!!", Toast.LENGTH_SHORT).show()
 
                     if (numberPoints == maxPoints) {
                         val intent = Intent()
-                        //intent.putExtra("Player", playerOnGame)
+
                         setResult(Activity.RESULT_OK, intent)
-                        val response = "You win!"
+                        val response = "Você venceu!"
 
                         Toast.makeText(this@GameActivity, response, Toast.LENGTH_SHORT).show()
                         mediaPlayer?.stop()
-                        finish()
                     }
                 }
             }

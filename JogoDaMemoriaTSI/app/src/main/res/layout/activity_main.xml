@@ -10,7 +10,8 @@ android:background="@drawable/backgroundgame"
 tools:context=".MainActivity">
 
     <LinearLayout
-            android:layout_weight="1"
+            android:layout_weight="1.2"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -22,7 +23,22 @@ tools:context=".MainActivity">
     </LinearLayout>
 
     <LinearLayout
-            android:layout_weight="1"
+                android:layout_weight="1.2"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+        <TextView
+                android:background="@drawable/jogodamemoria"
+                android:layout_gravity="center"
+                android:layout_width="250sp"
+                android:layout_height="50sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_weight="0.9"
             android:gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -31,29 +47,32 @@ tools:context=".MainActivity">
         <Button
                 android:id="@+id/btJogar"
                 android:text="JOGAR"
-                android:textSize="20sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/button"
+                android:textSize="15sp"
+                android:layout_width="140sp"
+                android:layout_height="50sp"/>
 
         <Button
                 android:id="@+id/btRanking"
                 android:text="RANKING"
-                android:textSize="20sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/button"
+                android:textSize="15sp"
+                android:layout_width="140sp"
+                android:layout_height="50sp"/>
 
         <Button
                 android:id="@+id/btProfessores"
                 android:text="PROFESSORES"
-                android:textSize="20sp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/button"
+                android:textSize="15sp"
+                android:layout_width="140sp"
+                android:layout_height="50sp"/>
 
 
     </LinearLayout>
 
     <LinearLayout
-            android:layout_weight="1"
+            android:layout_weight="1.2"
             android:orientation="vertical"
             android:gravity="bottom"
             android:layout_width="match_parent"
@@ -62,15 +81,17 @@ tools:context=".MainActivity">
         <Button
                 android:id="@+id/btSair"
                 android:text="SAIR"
+                android:textSize="14sp"
+                android:background="@drawable/button"
                 android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="100sp"
+                android:layout_height="40sp"/>
 
         <TextView
                 android:text="© 2019 PEDRO XAVIER | IFPB."
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="15sp"
+                android:textSize="10sp"
                 android:textColor="#FFFFFF"
                 android:layout_width="wrap_content"
                 android:layout_height="45dp"/>

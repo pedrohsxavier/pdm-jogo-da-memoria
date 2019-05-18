@@ -28,10 +28,10 @@ class ImageAdapter(private val context: Context) : BaseAdapter() {
             imageView = ImageView(this.context)
             imageView.setLayoutParams(AbsListView.LayoutParams(150,150))
             imageView.scaleType = ImageView.ScaleType.FIT_XY
-        } else {
+        } else
             imageView = convertView as ImageView
-            imageView.setImageResource(R.drawable.hidden)
-        }
+
+        imageView.setImageResource(R.drawable.hidden)
         return imageView
     }
 

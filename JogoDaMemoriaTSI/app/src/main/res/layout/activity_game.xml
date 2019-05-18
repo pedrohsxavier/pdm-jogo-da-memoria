@@ -17,7 +17,7 @@
 
         <TextView
                 android:text="TEMPO: "
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:textColor="#111000"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
@@ -25,7 +25,7 @@
 
         <Chronometer
                 android:id="@+id/cmTempo"
-                android:fontFamily="casual"
+                android:fontFamily="monospace"
                 android:textSize="20sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
@@ -58,14 +58,16 @@
         <Button
                 android:id="@+id/btRecomecar"
                 android:text="RECOMEÇAR"
-                android:layout_width="110sp"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/button"
+                android:layout_width="100sp"
+                android:layout_height="60sp"/>
 
         <Button
                 android:id="@+id/btVoltar"
                 android:text="VOLTAR"
-                android:layout_width="110sp"
-                android:layout_height="wrap_content"/>
+                android:background="@drawable/button"
+                android:layout_width="100sp"
+                android:layout_height="60sp"/>
 
     </LinearLayout>
 
