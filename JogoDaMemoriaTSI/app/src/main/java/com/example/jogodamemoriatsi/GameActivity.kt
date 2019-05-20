@@ -103,9 +103,8 @@ class GameActivity : AppCompatActivity() {
                 (view as ImageView?)?.setImageResource(teachers[pos[position]])
 
             } else {
-                if (currentPos == position) {
+                if (pos[currentPos] == position) {
                     Toast.makeText(this@GameActivity, "Tente de novo!", Toast.LENGTH_SHORT).show()
-                    Toast.makeText(this@GameActivity, "Tente novamente!", Toast.LENGTH_SHORT).show()
 
                 } else if (pos[currentPos] != pos[position]) {
                     (view as ImageView).setImageResource(teachers[pos[position]])

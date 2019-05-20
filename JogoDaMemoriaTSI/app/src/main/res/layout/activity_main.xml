@@ -18,7 +18,7 @@ tools:context=".MainActivity">
         <TextView
                 android:background="@drawable/campusjb"
                 android:layout_width="wrap_content"
-                android:layout_height="100sp"/>
+                android:layout_height="110sp"/>
 
     </LinearLayout>
 
@@ -32,8 +32,8 @@ tools:context=".MainActivity">
         <TextView
                 android:background="@drawable/jogodamemoria"
                 android:layout_gravity="center"
-                android:layout_width="200sp"
-                android:layout_height="30sp"/>
+                android:layout_width="260sp"
+                android:layout_height="50sp"/>
 
     </LinearLayout>
 
@@ -48,25 +48,25 @@ tools:context=".MainActivity">
                 android:id="@+id/btJogar"
                 android:text="JOGAR"
                 android:background="@drawable/button"
-                android:textSize="12sp"
-                android:layout_width="110sp"
-                android:layout_height="35sp"/>
+                android:textSize="14sp"
+                android:layout_width="125sp"
+                android:layout_height="45sp"/>
 
         <Button
                 android:id="@+id/btRanking"
                 android:text="RANKING"
                 android:background="@drawable/button"
-                android:textSize="12sp"
-                android:layout_width="110sp"
-                android:layout_height="35sp"/>
+                android:textSize="14sp"
+                android:layout_width="125sp"
+                android:layout_height="45sp"/>
 
         <Button
                 android:id="@+id/btProfessores"
                 android:text="PROFESSORES"
                 android:background="@drawable/button"
-                android:textSize="12sp"
-                android:layout_width="110sp"
-                android:layout_height="35sp"/>
+                android:textSize="14sp"
+                android:layout_width="125sp"
+                android:layout_height="45sp"/>
 
 
     </LinearLayout>
@@ -81,11 +81,11 @@ tools:context=".MainActivity">
         <Button
                 android:id="@+id/btSair"
                 android:text="SAIR"
-                android:textSize="11sp"
+                android:textSize="13sp"
                 android:background="@drawable/button"
                 android:layout_gravity="center"
-                android:layout_width="85sp"
-                android:layout_height="30sp"/>
+                android:layout_width="100sp"
+                android:layout_height="45sp"/>
 
         <TextView
                 android:text="© 2019 PEDRO XAVIER | IFPB."
