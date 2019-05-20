@@ -36,6 +36,7 @@
 
     <LinearLayout
             android:layout_weight="0.5"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -55,19 +56,36 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+        <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+
         <Button
                 android:id="@+id/btRecomecar"
                 android:text="RECOMEÇAR"
                 android:background="@drawable/button"
-                android:layout_width="100sp"
-                android:layout_height="60sp"/>
+                android:textSize="11sp"
+                android:layout_width="80sp"
+                android:layout_height="35sp"/>
+
+        <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
 
         <Button
                 android:id="@+id/btVoltar"
                 android:text="VOLTAR"
                 android:background="@drawable/button"
-                android:layout_width="100sp"
-                android:layout_height="60sp"/>
+                android:textSize="11sp"
+                android:layout_width="80sp"
+                android:layout_height="35sp"/>
+
+        <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
 
     </LinearLayout>
 
