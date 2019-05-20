@@ -76,16 +76,14 @@ class GameActivity : AppCompatActivity() {
 
     fun opening(view: View) {
         mediaPlayer?.stop()
-        finish()
         var intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
 
     fun restartGame(view: View) {
         mediaPlayer?.stop()
-        finish()
         var intent = Intent(this, GameActivity::class.java)
-        startActivity(intent)
+        startActivityForResult(intent, 1)
     }
 
     inner class Game : AdapterView.OnItemClickListener {
@@ -103,7 +101,7 @@ class GameActivity : AppCompatActivity() {
                 (view as ImageView?)?.setImageResource(teachers[pos[position]])
 
             } else {
-                if (pos[currentPos] == position) {
+                if (currentPos == position) {
                     Toast.makeText(this@GameActivity, "Tente de novo!", Toast.LENGTH_SHORT).show()
 
                 } else if (pos[currentPos] != pos[position]) {

@@ -4,8 +4,10 @@ import android.content.Intent
 import android.media.MediaPlayer
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.*
+import kotlinx.android.synthetic.main.activity_player.*
 
 class MainActivity : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null
@@ -153,18 +155,41 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun gameplay(view: View) {
+
+//        val box = AlertDialog.Builder(this)
+//        val view = layoutInflater.inflate(R.layout.activity_player, null)
+//        val nomePlayer =  view.findViewById(R.id.etNomeJogador) as EditText
+//        val cadastro = view.findViewById(R.id.btCadastrar) as Button
+//        box.setView(view)
+//        cadastro.setOnClickListener({Toast.makeText(this, "Cadastrado concluído!", Toast.LENGTH_LONG).show()})
+
+//      cadastro.setOnClickListener(View.OnClickListener { fun onClick(view: View) {
+//          if (!nomePlayer.toString().isEmpty()) {
+//              Toast.makeText(this, "Jogador cadastrado", Toast.LENGTH_LONG).show()
+//          }
+//      } })
+
+        //val box1 = AlertDialog.Builder(this)
+        //box.setTitle("Digite o seu nome: ")
+        //val inflater = layoutInflater
+        //val dialogLayout = inflater.inflate(R.layout.abc_alert_dialog_button_bar_material, null)
+        //val editText = dialogLayout.findViewById<EditText>(R.id.etNomeJogador)
+        //box1.setView(dialogLayout)
+        //box1.setPositiveButton("OK") {dialogInterface, i -> Toast.makeText(this, "Novo jogador cadastrado!", Toast.LENGTH_LONG).show()}
+        //box1.show()
+
         mediaPlayer?.stop()
+
         var intent = Intent(this, GameActivity::class.java)
         startActivityForResult(intent, 1)
     }
 
     /*fun rankingAll(view: View) {
-        mediaPlayer?.stop()
+
 
     }*/
 
     fun professoresIfpb(view: View) {
-        mediaPlayer?.stop()
         val intent = Intent(this, ShowActivity::class.java)
         intent.putExtra("PROFESSORES", this.professores)
         startActivityForResult(intent,1)
