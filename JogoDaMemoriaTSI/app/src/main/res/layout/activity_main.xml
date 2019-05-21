@@ -52,13 +52,13 @@ tools:context=".MainActivity">
                 android:layout_width="125sp"
                 android:layout_height="45sp"/>
 
-        <Button
-                android:id="@+id/btRanking"
-                android:text="RANKING"
-                android:background="@drawable/button"
-                android:textSize="14sp"
-                android:layout_width="125sp"
-                android:layout_height="45sp"/>
+        <!--<Button-->
+                <!--android:id="@+id/btRanking"-->
+                <!--android:text="RANKING"-->
+                <!--android:background="@drawable/button"-->
+                <!--android:textSize="14sp"-->
+                <!--android:layout_width="125sp"-->
+                <!--android:layout_height="45sp"/>-->
 
         <Button
                 android:id="@+id/btProfessores"

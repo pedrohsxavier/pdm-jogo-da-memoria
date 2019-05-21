@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
     private var mediaPlayer: MediaPlayer? = null
     lateinit var professores: ArrayList<Professor>
     private lateinit var btJogar: Button
-    private lateinit var btRanking: Button
+    //private lateinit var btRanking: Button
     private lateinit var btProfessores: Button
     private lateinit var btSair: Button
 
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         mediaPlayer?.isLooping
 
         this.btJogar = findViewById(R.id.btJogar)
-        this.btRanking = findViewById(R.id.btRanking)
+        //this.btRanking = findViewById(R.id.btRanking)
         this.btProfessores = findViewById(R.id.btProfessores)
         this.btSair = findViewById(R.id.btSair)
 
@@ -169,14 +169,14 @@ class MainActivity : AppCompatActivity() {
 //          }
 //      } })
 
-        //val box1 = AlertDialog.Builder(this)
-        //box.setTitle("Digite o seu nome: ")
-        //val inflater = layoutInflater
-        //val dialogLayout = inflater.inflate(R.layout.abc_alert_dialog_button_bar_material, null)
-        //val editText = dialogLayout.findViewById<EditText>(R.id.etNomeJogador)
-        //box1.setView(dialogLayout)
-        //box1.setPositiveButton("OK") {dialogInterface, i -> Toast.makeText(this, "Novo jogador cadastrado!", Toast.LENGTH_LONG).show()}
-        //box1.show()
+//        val box1 = AlertDialog.Builder(this)
+//        box.setTitle("Digite o seu nome: ")
+//        val inflater = layoutInflater
+//        val dialogLayout = inflater.inflate(R.layout.abc_alert_dialog_button_bar_material, null)
+//        val editText = dialogLayout.findViewById<EditText>(R.id.etNomeJogador)
+//        box1.setView(dialogLayout)
+//        box1.setPositiveButton("OK") {dialogInterface, i -> Toast.makeText(this, "Novo jogador cadastrado!", Toast.LENGTH_LONG).show()}
+//        box1.show()
 
         mediaPlayer?.stop()
 
@@ -192,7 +192,7 @@ class MainActivity : AppCompatActivity() {
     fun professoresIfpb(view: View) {
         val intent = Intent(this, ShowActivity::class.java)
         intent.putExtra("PROFESSORES", this.professores)
-        startActivityForResult(intent,1)
+        startActivity(intent)
     }
 
     fun sair(view: View) {

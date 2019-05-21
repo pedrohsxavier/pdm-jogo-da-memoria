@@ -9,7 +9,8 @@ class BancoHelper(context: Context): SQLiteOpenHelper(context, "banco", null, 1)
         val sql = "create table teacher (" +
                 "id integer primary key autoincrement, " +
                 "nome text, " +
-                "pontos integer" +
+                "disciplina text" +
+                "foto integer"
                 ")"
         db?.execSQL(sql)
     }
